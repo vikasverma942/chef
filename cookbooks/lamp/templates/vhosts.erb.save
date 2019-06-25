@@ -1,0 +1,20 @@
+<VirtualHost *:<%= @port_no %>>
+
+  # Admin email, Server Name (domain name) and any aliases
+  ServerAdmin webmaster@example.com
+  ServerName  example.com
+  ServerAlias www.example.co
+  # Index file and Document Root (where the public files are located)
+  DocumentRoot <%= @document_root %>
+  <Directory <%= @document_root %>>
+    Options Indexes FollowSymLinks
+    AllowOverride none
+    Require all granted
+  </Directory>
+  # Custom log file locations
+  LogLevel warn
+  ErrorLog /var/log/apache2/or-example.com.log
+  CustomLog /var/log/apache2/access-example.com.log combined
+
+</VirtualHost>
+
